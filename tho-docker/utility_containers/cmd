@@ -1,0 +1,4 @@
+docker image build -t node-utility . 
+
+docker container run --name node-utility -v $(pwd):/app -d node-utility
+

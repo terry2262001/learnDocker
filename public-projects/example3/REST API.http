@@ -1,0 +1,18 @@
+GET http://localhost:80/node
+
+POST http://localhost:80/node HTTP/1.1
+content-type: application/json
+
+{
+    "title":"thodemo",
+    "description": "Welcom to the word !!!",
+    "published" : true
+}
+
+GET http://localhost:80/java/all
+
+POST http://localhost:80/java/add?name=thonguyen&email=truongtho@gmail.com&age=23
+
+POST http://localhost:80/java/add?name=thonguyen1&email=truongtho1@gmail.com&age=24
+
+

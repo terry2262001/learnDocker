@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  thodev-mysql:
+    image: "mysql:latest"
+    environment: 
+      MYSQL_ROOT_PASSWORD: password123
+      MYSQL_DATABASE: db_example
+    volumes: 
+      - mysql-data:/var/lib/mysql
+  
+  thodev-app:
+    image: "wordpress:latest"
+    env_file: .env-app
+    ports: 
+      - 8080:80
+    volumes:
+      - app-data:/var/www/html
+    depends_on: 
+      - thodev-mysql
+
+volumes:
+ mysql-data:
+ app-data:

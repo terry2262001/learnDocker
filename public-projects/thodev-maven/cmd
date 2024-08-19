@@ -1,0 +1,8 @@
+docker image build -t maven-utility . 
+
+docker container run --name maven-utility -v $(pwd):/data --restart always -d maven-utility
+
+docker container exec -it maven-utility bash
+
+docker container exec -it maven-utility bash -c 'mvn clean package -Dmaven.test.failure.ignore=true'
+
